@@ -6,9 +6,8 @@ using System.Windows.Forms;
 
 namespace SudokuSolver {
     static class Program {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
+        public static SudokuSquareHandler SudokuSquareHandler = new SudokuSquareHandler();
+        public static BoardAnalyser BoardAnalyser = new BoardAnalyser();
         [STAThread]
         static void Main() {
             Application.SetHighDpiMode(HighDpiMode.SystemAware);

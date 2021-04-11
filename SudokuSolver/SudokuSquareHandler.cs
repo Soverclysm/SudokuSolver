@@ -22,5 +22,16 @@ namespace SudokuSolver {
             // This returns the SudokuSquare struct of the appropriate coordinates
             return InternalRepresentation.First(a => a.X == x && a.Y == y);
         }
+
+        public int[] GetSegmentAnchorCoordinates(int x, int y) {
+
+            // These functions transform regular x,y to the x,y of the 3x3 grids; ranges from 0,0 to 2,2
+            int largeX = (int)Math.Floor((double)((x + 1) / 3));
+            int largeY = (int)Math.Floor((double)((y + 1) / 3));
+
+            // Takes bottom left square (anchor square) of respective coordinates
+            return new int[] { largeX * 3, largeY * 3 };
+
+        }
     }
 }

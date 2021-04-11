@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 namespace SudokuSolver {
     public partial class Form1 : Form {
+        public SudokuSquareHandler SudokuSquareHandler = new SudokuSquareHandler();
+        public BoardAnalyser BoardAnalyser = new BoardAnalyser();
         public Form1() {
             InitializeComponent();
         }
