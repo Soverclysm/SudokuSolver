@@ -8,7 +8,7 @@ namespace SudokuSolver {
     // This class is a struct that stores all information about one particular sudoku square
     // Including coordinates, potential values and real value
 
-    public struct SudokuSquare {
+    public class SudokuSquare {
         public SudokuSquare(int x, int y) { // uses mathematical graph coordinates, not programmatic ones
             X = x;
             Y = y;
