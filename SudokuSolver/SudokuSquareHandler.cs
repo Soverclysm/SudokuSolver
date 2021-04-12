@@ -20,8 +20,7 @@ namespace SudokuSolver {
 
         public SudokuSquare GetInternalSquare(int x, int y) {
             // This returns the SudokuSquare struct of the appropriate coordinates
-            SudokuSquare arg = InternalRepresentation.First(a => a.X == x && a.Y == y);
-            return arg;
+            return InternalRepresentation.First(a => a.X == x && a.Y == y);
         }
 
         public int[] GetSegmentAnchorCoordinates(int x, int y) {

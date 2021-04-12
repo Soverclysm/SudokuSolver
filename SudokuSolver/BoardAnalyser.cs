@@ -43,13 +43,12 @@ namespace SudokuSolver {
         private void FillObviousSquares() {
             bool Progress = false;
             foreach (SudokuSquare a in Program.SudokuSquareHandler.InternalRepresentation) {
-                var arg = Program.SudokuSquareHandler.GetInternalSquare(a.X, a.Y);
                 if (a.PotentialValues.Count == 1) {
-                    arg.RealValue = a.PotentialValues[0];
+                    a.RealValue = a.PotentialValues[0];
                     Progress = true;
                 }
             }
-            if (Progress) RunAnalysis(); 
+            if (Progress) FillObviousSquares();
         }
 
     }
