@@ -45,10 +45,12 @@ namespace SudokuSolver {
             foreach (SudokuSquare a in Program.SudokuSquareHandler.InternalRepresentation) {
                 if (a.PotentialValues.Count == 1) {
                     a.RealValue = a.PotentialValues[0];
+                    UpdatePotentialValues(a);
                     Progress = true;
                 }
             }
             if (Progress) FillObviousSquares();
+            else new BoardBacktracker().Backtrack(Program.SudokuSquareHandler.InternalRepresentation);
         }
 
     }
