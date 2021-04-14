@@ -24,9 +24,11 @@ namespace SudokuSolver {
             // Try every value in the given square
             for (int i = 1; i < 10; i++) {
                 List<SudokuSquare> PlaceholderSudokuBoard = SudokuBoard;
-                if (TrialSquare.PotentialValues.Contains(i)) TrialSquare.RealValue = i;
-                // Recurse the function... if the number that we tried was wrong, go to next one
-                if (Backtrack(PlaceholderSudokuBoard)) return true;
+                if (TrialSquare.PotentialValues.Contains(i)) {
+                    TrialSquare.RealValue = i;
+                    // Recurse the function... if the number that we tried was wrong, go to next one
+                    if (Backtrack(PlaceholderSudokuBoard)) return true;
+                }
             }
             return false;
         }
