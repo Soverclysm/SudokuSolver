@@ -11,8 +11,6 @@ using System.Windows.Forms;
 namespace SudokuSolver {
     public partial class Form1 : Form {
         // Classes that can be accessed by any other class for simplicity sake
-        public SudokuSquareHandler SudokuSquareHandler = new SudokuSquareHandler();
-        public BoardAnalyser BoardAnalyser = new BoardAnalyser();
         public GraphicsHandler GraphicsHandle;
         public Form1() {
             InitializeComponent();
@@ -34,7 +32,7 @@ namespace SudokuSolver {
         private void SolveButtonClicked(object sender, EventArgs e) {
             // Runs all functions necessary to display a solved board to the user
             GraphicsHandle.ReadBoard();
-            BoardAnalyser.RunAnalysis();
+            Program.BoardAnalyser.RunAnalysis();
             GraphicsHandle.WriteBoard();
         }
     }
