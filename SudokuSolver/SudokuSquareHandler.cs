@@ -11,8 +11,8 @@ namespace SudokuSolver {
         public List<SudokuSquare> InternalRepresentation = new List<SudokuSquare>();
 
         public SudokuSquareHandler() {
-            for (int x = 0; x < 9; x++) {
-                for (int y = 0; y < 9; y++) {
+            for (int y = 0; y < 9; y++) {
+                for (int x = 0; x < 9; x++) {
                     InternalRepresentation.Add(new SudokuSquare(x, y));
                 }
             }

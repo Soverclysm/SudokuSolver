@@ -12,7 +12,7 @@ namespace SudokuSolver {
     public partial class Form1 : Form {
         public SudokuSquareHandler SudokuSquareHandler = new SudokuSquareHandler();
         public BoardAnalyser BoardAnalyser = new BoardAnalyser();
-        public GraphicsHandler GraphicsHandler;
+        public GraphicsHandler GraphicsHandle;
         public Form1() {
             InitializeComponent();
             TextBox[] arg = {
@@ -26,10 +26,12 @@ namespace SudokuSolver {
                 A8, B8, C8, D8, E8, F8, G8, H8,
                 A9, B9, C9, D9, E9, F9, G9, H9
             };
+            GraphicsHandle = new GraphicsHandler(arg);
         }
 
         private void SolveButtonClicked(object sender, EventArgs e) {
-            
+            GraphicsHandle.ReadBoard();
+            BoardAnalyser.RunAnalysis();
         }
     }
 }
