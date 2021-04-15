@@ -26,8 +26,5 @@ namespace SudokuSolver {
                 GraphicalReference[i].Text = Program.SudokuSquareHandler.InternalRepresentation[i].RealValue.ToString();
             }
         }
-
-        private Func<int, int> GetX = (int Index) => Index % 9;
-        private Func<int, int> GetY = (int Index) => (int)Math.Floor((double)(Index / 9));
     }
 }
