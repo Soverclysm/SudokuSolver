@@ -31,9 +31,11 @@ namespace SudokuSolver {
 
         private void SolveButtonClicked(object sender, EventArgs e) {
             // Runs all functions necessary to display a solved board to the user
+            Console.WriteLine("Test");
             GraphicsHandle.ReadBoard();
             Program.BoardAnalyser.RunAnalysis();
             GraphicsHandle.WriteBoard();
+            Console.Read();
         }
     }
 }

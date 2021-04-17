@@ -28,6 +28,7 @@ namespace SudokuSolver {
                     TrialSquare.RealValue = i;
                     // Recurse the function... if the number that we tried was wrong, go to next one
                     if (Backtrack()) return true;
+                    else TrialSquare.RealValue = -1;
                 }
             }
             return false;
