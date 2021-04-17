@@ -9,9 +9,10 @@ namespace SudokuSolver {
         public bool Backtrack(List<SudokuSquare> SudokuBoard) {
 
             SudokuSquare TrialSquare = new SudokuSquare(9,9);
+            List<SudokuSquare> PlaceholderSudokuBoard = SudokuBoard;
 
             // Find the next square which is not yet filled in
-            foreach (SudokuSquare SS in SudokuBoard) {
+            foreach (SudokuSquare SS in PlaceholderSudokuBoard) {
                 if (SS.RealValue == -1) {
                     TrialSquare = SS;
                     break;
@@ -23,7 +24,6 @@ namespace SudokuSolver {
 
             // Try every value in the given square
             for (int i = 1; i < 10; i++) {
-                List<SudokuSquare> PlaceholderSudokuBoard = SudokuBoard;
                 if (TrialSquare.PotentialValues.Contains(i)) {
                     TrialSquare.RealValue = i;
                     // Recurse the function... if the number that we tried was wrong, go to next one

@@ -43,7 +43,7 @@ namespace SudokuSolver {
         private void FillObviousSquares() {
             bool Progress = false;
             foreach (SudokuSquare a in Program.SudokuSquareHandler.InternalRepresentation) {
-                if (a.PotentialValues.Count == 1) {
+                if (a.PotentialValues.Count == 1 && a.RealValue == -1) {
                     a.RealValue = a.PotentialValues[0];
                     UpdatePotentialValues(a);
                     Progress = true;
