@@ -44,5 +44,8 @@ namespace SudokuSolver {
             return new int[] { largeX , largeY };
 
         }
+
+        public Func<int, int> GetY = (int Index) => (int)Math.Floor((double)(Index / 9));
+        public Func<int, int> GetX = (int Index) => Index % 9;
     }
 }

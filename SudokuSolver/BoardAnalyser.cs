@@ -50,7 +50,7 @@ namespace SudokuSolver {
                 }
             }
             if (Progress) FillObviousSquares();
-            else new BoardBacktracker().Backtrack(Program.SudokuSquareHandler.InternalRepresentation);
+            else new BoardBacktracker().Backtrack();
         }
 
     }
