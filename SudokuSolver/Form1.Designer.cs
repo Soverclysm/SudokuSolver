@@ -106,6 +106,7 @@ namespace SudokuSolver {
             this.B3 = new System.Windows.Forms.TextBox();
             this.A3 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.TimerDisplay = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // A9
@@ -685,11 +686,21 @@ namespace SudokuSolver {
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.SolveButtonClicked);
             // 
+            // TimerDisplay
+            // 
+            this.TimerDisplay.AutoSize = true;
+            this.TimerDisplay.Location = new System.Drawing.Point(902, 265);
+            this.TimerDisplay.Name = "TimerDisplay";
+            this.TimerDisplay.Size = new System.Drawing.Size(38, 15);
+            this.TimerDisplay.TabIndex = 82;
+            this.TimerDisplay.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.TimerDisplay);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.I1);
             this.Controls.Add(this.H1);
@@ -863,6 +874,7 @@ namespace SudokuSolver {
         public System.Windows.Forms.TextBox B3;
         public System.Windows.Forms.TextBox A3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label TimerDisplay;
     }
 }
 

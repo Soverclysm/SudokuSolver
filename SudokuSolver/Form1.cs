@@ -6,12 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace SudokuSolver {
     public partial class Form1 : Form {
         // Classes that can be accessed by any other class for simplicity sake
         public GraphicsHandler GraphicsHandle;
+        private Stopwatch sw = new Stopwatch();
         public Form1() {
             InitializeComponent();
             // An array of the graphical elements to be passed to the GraphicsHandler
@@ -30,12 +32,12 @@ namespace SudokuSolver {
         }
 
         private void SolveButtonClicked(object sender, EventArgs e) {
-            // Runs all functions necessary to display a solved board to the user
-            Console.WriteLine("Test");
             GraphicsHandle.ReadBoard();
+            sw = Stopwatch.StartNew();
             Program.BoardAnalyser.RunAnalysis();
+            sw.Stop();
             GraphicsHandle.WriteBoard();
-            Console.Read();
+            TimerDisplay.Text = $"{(sw.ElapsedTicks * 1000000) / Stopwatch.Frequency}ns";
         }
     }
 }
